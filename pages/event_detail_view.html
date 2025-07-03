@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI for Small Business Automation - AI Agents Community</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Faiagents2253back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.5"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Global Navigation Header -->
+    <header class="sticky top-0 z-50 glassmorphism border-b border-gray-200">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                        <path d="M16 2L3 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7L16 2z"/>
+                        <circle cx="16" cy="12" r="3" fill="white"/>
+                        <path d="M16 16l-3 3h6l-3-3z" fill="white"/>
+                    </svg>
+                    <span class="ml-2 text-xl font-bold text-primary">AI Agents HK</span>
+                    <span class="ml-2 text-sm text-gray-500 hidden sm:inline">Global Community</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="community_homepage.html" class="text-gray-600 hover:text-primary transition-colors">Home</a>
+                    <a href="event_listing_filter.html" class="text-primary font-medium">Events</a>
+                    <a href="stakeholder_benefits_hub.html" class="text-gray-600 hover:text-primary transition-colors">Benefits</a>
+                    <a href="community_membership_registration.html" class="text-gray-600 hover:text-primary transition-colors">Join</a>
+                </div>
+
+                <!-- Language Toggle & Search -->
+                <div class="flex items-center space-x-4">
+                    <div class="hidden sm:flex items-center">
+                        <input type="search" placeholder="Search events..." class="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" />
+                        <button class="ml-2 p-2 text-gray-400 hover:text-primary">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="flex items-center space-x-2 text-sm">
+                        <button class="px-2 py-1 bg-primary text-white rounded">EN</button>
+                        <button class="px-2 py-1 text-gray-600 hover:bg-gray-100 rounded">中</button>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden p-2 text-gray-600 hover:text-primary" onclick="toggleMobileMenu()">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden py-4 border-t border-gray-200">
+                <div class="flex flex-col space-y-4">
+                    <input type="search" placeholder="Search events..." class="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary" />
+                    <a href="community_homepage.html" class="text-gray-600">Home</a>
+                    <a href="event_listing_filter.html" class="text-primary font-medium">Events</a>
+                    <a href="stakeholder_benefits_hub.html" class="text-gray-600">Benefits</a>
+                    <a href="community_membership_registration.html" class="text-gray-600">Join Community</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb Navigation -->
+    <section class="bg-gray-50 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex items-center space-x-2 text-sm text-gray-500">
+                <a href="community_homepage.html" class="hover:text-primary transition-colors">Home</a>
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+                <a href="event_listing_filter.html" class="hover:text-primary transition-colors">Events</a>
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+                <span class="text-gray-900 font-medium">AI for Small Business Automation</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Event Hero Section -->
+    <section class="relative bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Event Image & Main Info -->
+                <div class="lg:col-span-2">
+                    <div class="relative h-64 lg:h-80 rounded-xl overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="AI Workshop" class="w-full h-full object-cover" onerror="this.src='https://images.pixabay.com/photo/2023/01/26/22/14/ai-generated-7747171_1280.jpg'; this.onerror=null;" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <div class="flex items-center space-x-2 mb-2">
+                                <span class="bg-primary px-3 py-1 rounded-full text-sm font-medium">Featured</span>
+                                <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm">Awareness Event</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event Title & Description -->
+                    <div class="mb-8">
+                        <h1 class="text-fluid-4xl font-bold text-gray-900 mb-4">AI for Small Business Automation</h1>
+                        <p class="text-fluid-lg text-gray-600 mb-6">
+                            Discover how artificial intelligence can transform your small business operations. Learn practical AI tools and strategies to automate repetitive tasks, improve customer service, and boost productivity without breaking the bank.
+                        </p>
+                        
+                        <!-- Read More Section (Mobile) -->
+                        <div class="lg:hidden">
+                            <div id="shortDescription" class="text-gray-600">
+                                <p class="mb-4">This comprehensive workshop covers essential AI automation tools specifically designed for small businesses...</p>
+                                <button onclick="toggleDescription()" class="text-primary font-medium hover:text-primary-700 transition-colors">
+                                    Read More
+                                </button>
+                            </div>
+                            <div id="fullDescription" class="hidden text-gray-600">
+                                <p class="mb-4">This comprehensive workshop covers essential AI automation tools specifically designed for small businesses. You'll learn how to implement chatbots for customer service, automate email marketing campaigns, streamline inventory management, and use AI-powered analytics to make data-driven decisions.</p>
+                                <p class="mb-4">Our expert instructors will guide you through hands-on exercises using popular AI platforms like Zapier, ChatGPT for business, and automated scheduling tools. By the end of this session, you'll have a clear roadmap for implementing AI solutions that can save you hours each week.</p>
+                                <p class="mb-4">Perfect for entrepreneurs, small business owners, and managers looking to leverage AI technology without requiring technical expertise. All skill levels welcome - no coding experience necessary.</p>
+                                <button onclick="toggleDescription()" class="text-primary font-medium hover:text-primary-700 transition-colors">
+                                    Show Less
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Full Description (Desktop) -->
+                        <div class="hidden lg:block text-gray-600">
+                            <p class="mb-4">This comprehensive workshop covers essential AI automation tools specifically designed for small businesses. You'll learn how to implement chatbots for customer service, automate email marketing campaigns, streamline inventory management, and use AI-powered analytics to make data-driven decisions.</p>
+                            <p class="mb-4">Our expert instructors will guide you through hands-on exercises using popular AI platforms like Zapier, ChatGPT for business, and automated scheduling tools. By the end of this session, you'll have a clear roadmap for implementing AI solutions that can save you hours each week.</p>
+                            <p class="mb-4">Perfect for entrepreneurs, small business owners, and managers looking to leverage AI technology without requiring technical expertise. All skill levels welcome - no coding experience necessary.</p>
+                        </div>
+                    </div>
+
+                    <!-- Social Sharing -->
+                    <div class="flex items-center space-x-4 mb-8">
+                        <span class="text-gray-600 font-medium">Share this event:</span>
+                        <div class="flex space-x-3">
+                            <button class="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                                </svg>
+                            </button>
+                            <button class="p-2 bg-blue-800 text-white rounded-lg hover:bg-blue-900 transition-colors">
+                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </button>
+                            <button class="p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
+                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                                </svg>
+                            </button>
+                            <button class="p-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
+                                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Registration Sidebar -->
+                <div class="lg:col-span-1">
+                    <div class="sticky top-24">
+                        <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-elevation-2">
+                            <!-- Event Details -->
+                            <div class="mb-6">
+                                <div class="flex items-center text-gray-600 mb-3">
+                                    <svg class="h-5 w-5 mr-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                    </svg>
+                                    <div>
+                                        <div class="font-medium text-gray-900">15/01/2025</div>
+                                        <div class="text-sm">19:00 - 21:00 UTC+8</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center text-gray-600 mb-3">
+                                    <svg class="h-5 w-5 mr-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    </svg>
+                                    <div>
+                                        <div class="font-medium text-gray-900">Central, Hong Kong</div>
+                                        <div class="text-sm">WeWork Tower, 15/F</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center text-gray-600 mb-6">
+                                    <svg class="h-5 w-5 mr-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                    </svg>
+                                    <div>
+                                        <div class="font-medium text-gray-900">24 spots left</div>
+                                        <div class="text-sm text-success">50 people registered</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Pricing -->
+                            <div class="mb-6">
+                                <div class="text-center">
+                                    <div class="text-3xl font-bold text-gray-900 mb-2">HK$350</div>
+                                    <div class="text-sm text-gray-500">
+                                        USD $45 • EUR €42
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Time Zone Converter -->
+                            <div class="mb-6 p-4 bg-gray-50 rounded-lg">
+                                <h4 class="font-medium text-gray-900 mb-3">Event Time in Your Zone</h4>
+                                <div class="space-y-2 text-sm">
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-600">Hong Kong (UTC+8):</span>
+                                        <span class="font-medium">19:00 - 21:00</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-600">New York (UTC-5):</span>
+                                        <span class="font-medium">06:00 - 08:00</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-600">London (UTC+0):</span>
+                                        <span class="font-medium">11:00 - 13:00</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-600">Singapore (UTC+8):</span>
+                                        <span class="font-medium">19:00 - 21:00</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Registration Button -->
+                            <button onclick="openRegistrationModal()" class="w-full bg-primary text-white py-3 px-6 rounded-lg font-medium hover:bg-primary-700 transition-colors shadow-lg hover-lift mb-4">
+                                Register Now
+                            </button>
+                            
+                            <div class="text-center text-sm text-gray-500">
+                                Secure payment • Full refund if cancelled 24h before
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Information Cards -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Agenda Timeline -->
+                <div class="bg-white rounded-xl p-6 shadow-elevation-2">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-6">Event Agenda</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-16 text-sm font-medium text-gray-500">19:00</div>
+                            <div class="flex-1">
+                                <h4 class="font-medium text-gray-900">Welcome & Introductions</h4>
+                                <p class="text-gray-600 text-sm">Meet fellow participants and overview of the session</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-16 text-sm font-medium text-gray-500">19:15</div>
+                            <div class="flex-1">
+                                <h4 class="font-medium text-gray-900">AI Fundamentals for Business</h4>
+                                <p class="text-gray-600 text-sm">Understanding AI capabilities and limitations</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-16 text-sm font-medium text-gray-500">19:45</div>
+                            <div class="flex-1">
+                                <h4 class="font-medium text-gray-900">Hands-on Tool Demonstration</h4>
+                                <p class="text-gray-600 text-sm">Live demo of popular AI automation tools</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-16 text-sm font-medium text-gray-500">20:15</div>
+                            <div class="flex-1">
+                                <h4 class="font-medium text-gray-900">Implementation Planning</h4>
+                                <p class="text-gray-600 text-sm">Create your personalized AI adoption roadmap</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-16 text-sm font-medium text-gray-500">20:45</div>
+                            <div class="flex-1">
+                                <h4 class="font-medium text-gray-900">Q&A and Networking</h4>
+                                <p class="text-gray-600 text-sm">Connect with speakers and fellow attendees</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker Profiles -->
+                <div class="bg-white rounded-xl p-6 shadow-elevation-2">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-6">Featured Speakers</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Dr. Sarah Chen" class="w-16 h-16 rounded-full object-cover" onerror="this.src='https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260'; this.onerror=null;" />
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-gray-900">Dr. Sarah Chen</h4>
+                                <p class="text-primary text-sm font-medium">AI Strategy Consultant</p>
+                                <p class="text-gray-600 text-sm mt-1">15+ years helping SMEs implement AI solutions. Former Google AI researcher with expertise in business automation.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Marcus Wong" class="w-16 h-16 rounded-full object-cover" onerror="this.src='https://images.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg'; this.onerror=null;" />
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-gray-900">Marcus Wong</h4>
+                                <p class="text-secondary text-sm font-medium">Tech Entrepreneur</p>
+                                <p class="text-gray-600 text-sm mt-1">Founded 3 successful AI startups. Specializes in practical AI implementation for small businesses.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Target Audience -->
+                <div class="bg-white rounded-xl p-6 shadow-elevation-2">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-6">Who Should Attend</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
+                                <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                            </div>
+                            <span class="text-gray-700">Small Business Owners</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
+                                <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                            </div>
+                            <span class="text-gray-700">Entrepreneurs</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
+                                <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                            </div>
+                            <span class="text-gray-700">Operations Managers</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
+                                <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                            </div>
+                            <span class="text-gray-700">Consultants</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learning Outcomes -->
+                <div class="bg-white rounded-xl p-6 shadow-elevation-2">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-6">What You'll Learn</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start space-x-3">
+                            <svg class="h-5 w-5 text-success mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                            </svg>
+                            <span class="text-gray-700">Identify automation opportunities in your business</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="h-5 w-5 text-success mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                            </svg>
+                            <span class="text-gray-700">Master essential AI tools for small businesses</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="h-5 w-5 text-success mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                            </svg>
+                            <span class="text-gray-700">Create a personalized AI implementation plan</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="h-5 w-5 text-success mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                            </svg>
+                            <span class="text-gray-700">Calculate ROI and measure AI impact</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="h-5 w-5 text-success mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                            </svg>
+                            <span class="text-gray-700">Network with like-minded business owners</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Events Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-fluid-3xl font-bold text-gray-900 mb-4">Related Events</h2>
+                <p class="text-fluid-lg text-gray-600">Discover more events that might interest you</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Related Event 1 -->
+                <div class="bg-white rounded-xl shadow-elevation-2 overflow-hidden hover-lift cursor-pointer" onclick="window.location.href='event_detail_view.html'">
+                    <div class="relative h-48">
+                        <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Enterprise AI Summit" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2940&auto=format&fit=crop'; this.onerror=null;" />
+                        <div class="absolute top-4 left-4 bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">
+                            Enterprise
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium text-gray-900">
+                            HK$1,200
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            22/01/2025 • 09:00-17:00 UTC+8
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Enterprise AI Strategy Summit</h3>
+                        <p class="text-gray-600 mb-4">Full-day conference on implementing AI at scale with industry leaders and case studies.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-sm text-gray-500">
+                                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                                Admiralty, Hong Kong
+                            </div>
+                            <div class="flex items-center text-sm text-warning">
+                                <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"/>
+                                </svg>
+                                8 spots left
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Event 2 -->
+                <div class="bg-white rounded-xl shadow-elevation-2 overflow-hidden hover-lift cursor-pointer" onclick="window.location.href='event_detail_view.html'">
+                    <div class="relative h-48">
+                        <img src="https://images.pixabay.com/photo/2023/04/06/15/50/ai-generated-7904344_1280.jpg" alt="AI Tools Showcase" class="w-full h-full object-cover" onerror="this.src='https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260'; this.onerror=null;" />
+                        <div class="absolute top-4 left-4 bg-success text-white px-3 py-1 rounded-full text-sm font-medium">
+                            Showcase
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium text-gray-900">
+                            HK$650
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            25/01/2025 • 14:00-18:00 UTC+8
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Latest AI Tools & Innovations</h3>
+                        <p class="text-gray-600 mb-4">Discover the newest AI tools and technologies from leading innovators and startups.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-sm text-gray-500">
+                                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                                Tsim Sha Tsui, Hong Kong
+                            </div>
+                            <div class="flex items-center text-sm text-success">
+                                <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                35 spots left
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Event 3 -->
+                <div class="bg-white rounded-xl shadow-elevation-2 overflow-hidden hover-lift cursor-pointer" onclick="window.location.href='event_detail_view.html'">
+                    <div class="relative h-48">
+                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="AI Networking Event" class="w-full h-full object-cover" onerror="this.src='https://images.pixabay.com/photo/2023/01/26/22/14/ai-generated-7747171_1280.jpg'; this.onerror=null;" />
+                        <div class="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">
+                            Networking
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium text-gray-900">
+                            HK$200
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            28/01/2025 • 18:30-21:00 UTC+8
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">AI Community Networking Night</h3>
+                        <p class="text-gray-600 mb-4">Connect with AI enthusiasts, entrepreneurs, and industry professionals in a relaxed setting.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-sm text-gray-500">
+                                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                                Wan Chai, Hong Kong
+                            </div>
+                            <div class="flex items-center text-sm text-success">
+                                <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                42 spots left
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="event_listing_filter.html" class="bg-primary text-white px-8 py-3 rounded-lg font-medium hover:bg-primary-700 transition-colors shadow-lg hover-lift">
+                    View All Events
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Modal -->
+    <div id="registrationModal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75" onclick="closeRegistrationModal()"></div>
+            
+            <div class="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-lg font-semibold text-gray-900">Register for Event</h3>
+                    <button onclick="closeRegistrationModal()" class="text-gray-400 hover:text-gray-600">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your full name" />
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                        <input type="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your email" />
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                        <input type="tel" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="+852 1234 5678" />
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Company (Optional)</label>
+                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Your company name" />
+                    </div>
+
+                    <div class="border-t pt-4">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-gray-700">Event Price:</span>
+                            <span class="text-xl font-bold text-gray-900">HK$350</span>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <label class="flex items-center">
+                                <input type="radio" name="payment" value="stripe" class="text-primary focus:ring-primary" checked />
+                                <span class="ml-2 text-sm text-gray-700">Credit/Debit Card</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="payment" value="paypal" class="text-primary focus:ring-primary" />
+                                <span class="ml-2 text-sm text-gray-700">PayPal</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="payment" value="alipay" class="text-primary focus:ring-primary" />
+                                <span class="ml-2 text-sm text-gray-700">Alipay</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-2 pt-4">
+                        <input type="checkbox" class="mt-1 text-primary focus:ring-primary" />
+                        <label class="text-sm text-gray-600">
+                            I agree to the <a href="#" class="text-primary hover:underline">Terms & Conditions</a> and <a href="#" class="text-primary hover:underline">Privacy Policy</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="w-full bg-primary text-white py-3 px-6 rounded-lg font-medium hover:bg-primary-700 transition-colors">
+                        Complete Registration
+                    </button>
+                </form>
+
+                <div class="mt-4 text-center text-sm text-gray-500">
+                    Secure payment processing • Full refund available
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2L3 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7L16 2z"/>
+                            <circle cx="16" cy="12" r="3" fill="white"/>
+                            <path d="M16 16l-3 3h6l-3-3z" fill="white"/>
+                        </svg>
+                        <span class="ml-2 text-xl font-bold">AI Agents HK</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Bridging businesses and AI innovators across Hong Kong and the global community.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="community_homepage.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="event_listing_filter.html" class="text-gray-400 hover:text-white transition-colors">Events</a></li>
+                        <li><a href="stakeholder_benefits_hub.html" class="text-gray-400 hover:text-white transition-colors">Benefits</a></li>
+                        <li><a href="community_membership_registration.html" class="text-gray-400 hover:text-white transition-colors">Join Community</a></li>
+                    </ul>
+                </div>
+
+                <!-- Event Categories -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Event Categories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="event_listing_filter.html" class="text-gray-400 hover:text-white transition-colors">Awareness Events</a></li>
+                        <li><a href="event_listing_filter.html" class="text-gray-400 hover:text-white transition-colors">Need Discovery</a></li>
+                        <li><a href="event_listing_filter.html" class="text-gray-400 hover:text-white transition-colors">Enterprise Solutions</a></li>
+                        <li><a href="event_listing_filter.html" class="text-gray-400 hover:text-white transition-colors">Tech Showcases</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <div class="space-y-2 text-gray-400">
+                        <p class="flex items-center">
+                            <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            Central, Hong Kong
+                        </p>
+                        <p class="flex items-center">
+                            <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            hello@aiagentshk.com
+                        </p>
+                        <p class="flex items-center">
+                            <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                            +852 1234 5678
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 AI Agents HK. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        function toggleDescription() {
+            const shortDesc = document.getElementById('shortDescription');
+            const fullDesc = document.getElementById('fullDescription');
+            
+            if (shortDesc.classList.contains('hidden')) {
+                shortDesc.classList.remove('hidden');
+                fullDesc.classList.add('hidden');
+            } else {
+                shortDesc.classList.add('hidden');
+                fullDesc.classList.remove('hidden');
+            }
+        }
+
+        function openRegistrationModal() {
+            document.getElementById('registrationModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeRegistrationModal() {
+            document.getElementById('registrationModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeRegistrationModal();
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
